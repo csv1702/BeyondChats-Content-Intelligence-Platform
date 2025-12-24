@@ -1,11 +1,10 @@
 services:
-  # 1. The Laravel Backend
+  # 1. The Laravel Backend (Docker Version)
   - type: web
     name: beyondchats-backend
-    env: php
+    env: docker
     rootDir: backend
-    buildCommand: composer install --no-dev --optimize-autoloader
-    startCommand: php artisan migrate --force && php artisan serve --host 0.0.0.0 --port $PORT
+    dockerfilePath: backend/Dockerfile
     envVars:
       - key: APP_KEY
         sync: false
