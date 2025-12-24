@@ -23,7 +23,9 @@ function App() {
     fetchArticles();
     const interval = setInterval(() => {
       axios
-        .get("http://127.0.0.1:8000/api/articles")
+        .get(
+          "https://beyondchats-content-intelligence-platform.onrender.com/api/articles"
+        )
         .then((response) => {
           setArticles(response.data);
           setLastUpdated(new Date());
@@ -36,7 +38,9 @@ function App() {
   const fetchArticles = () => {
     setLoading(true);
     axios
-      .get("http://127.0.0.1:8000/api/articles")
+      .get(
+        "https://beyondchats-content-intelligence-platform.onrender.com/api/articles"
+      )
       .then((response) => {
         setArticles(response.data);
         setLoading(false);
